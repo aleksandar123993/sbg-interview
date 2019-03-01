@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: add_history_table
+      author: aleksandarivanisevic1993@gmail.com
+      changes:
+        - createTable:
+            tableName: history
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: command
+                  type: varchar2(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: insert_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
