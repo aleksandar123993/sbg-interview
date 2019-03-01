@@ -30,7 +30,7 @@ public class Constants {
     public static final String[] AVAILABLE_COMMANDS = {PROJECTS_LIST, FILES_LIST, FILES_STAT, FILES_UPDATE, FILES_DOWNLOAD};
 
     public static final String GENERAL_HELP_MESSAGE = "You need to insert command in following pattern: \"cgccli --token <TOKEN> command" +
-            "\nAvailable commands: [" + String.join(", ", AVAILABLE_COMMANDS )+ "]. Type --help <COMMAND> for more info.";
+            "\nAvailable commands: [" + String.join(", ", AVAILABLE_COMMANDS) + "]. Type --help <COMMAND> for more info.";
 
     private static final Map<String, String> commandHelpMap = new HashMap<>();
 
@@ -39,11 +39,18 @@ public class Constants {
     public static final String FILES_LISTS_HELP_MESSAGE = "Command for fetching files.\n" +
             "Available queries: " + String.join(", ", FILES_LISTS_AVAILABLE_QUERIES);
     public static final String FILES_STAT_HELP_MESSAGE = "Command for fetching files stat.\n" +
-            "Available queries: " + String.join(", ", FILES_STAT_AVAILABLE_QUERIES);
+            "Available queries: " + String.join(", ", FILES_STAT_AVAILABLE_QUERIES) +
+            "\nRequired path param: file_id (" + FILE_ID + WORD + " )";
     public static final String FILES_UPDATE_HELP_MESSAGE = "Command for updating specific file.\n" +
-            "Available queries: " + String.join(", ", FILES_UPDATE_AVAILABLE_QUERIES);
+            "Available queries: " + String.join(", ", FILES_UPDATE_AVAILABLE_QUERIES) +
+            "\nRequired path param: file_id (" + FILE_ID + WORD + " )" +
+            "\nOptional request body params: [ name, tags, metadata.{field} ], request params needs to be insert in pattern: " +
+            " name=<value> tags=<value1>, <value2>, ... metadata.library_id=<value>";
+
     public static final String FILES_DOWNLOAD_HELP_MESSAGE = "Command for downloading specific file.\n" +
-            "Available queries: " + String.join(", ", FILES_DOWNLOAD_AVAILABLE_QUERIES);
+            "Available queries: " + String.join(", ", FILES_DOWNLOAD_AVAILABLE_QUERIES) +
+            "\nRequired path param: file_id (" + FILE_ID + WORD + " )" +
+            "\nRequired param: destination (" + DEST + WORD + " )";
 
     public static Map<String, String> getCommandHelpMap() {
         commandHelpMap.put(PROJECTS_LIST, PROJECTS_LISTS_HELP_MESSAGE);

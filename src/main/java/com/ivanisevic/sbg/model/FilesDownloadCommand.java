@@ -1,8 +1,6 @@
 package com.ivanisevic.sbg.model;
 
 import com.ivanisevic.sbg.helpers.ParameterHelper;
-import com.ivanisevic.sbg.model.Command;
-import com.ivanisevic.sbg.model.CommandName;
 import lombok.Getter;
 
 import java.util.Arrays;
